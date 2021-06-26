@@ -9,10 +9,19 @@ router.get('/', async (req: Request, res: Response) => {
     if (!imageUrl) {
         return res.status(400).send({ message: 'Image Url is required.' });
     }
-
+    let url = new URL(imageUrl);
     request({
-        host: imageUrl
+        hostname: url.hostname,
+        path: url.pathname,
+        method: 'GET'
     }, async (response) => {
+        console.log(`statusCode: ${response.statusCode}`)
+
+        if (response.statusCode != 200) {
+            console.error(`Image Url is invalid.`);
+            return res.status(400).send({ message: 'Image URL doesnt return any resource.' });
+        }
+
         try {
             const filteredImage = await filterImageFromURL(imageUrl);
             res.sendFile(filteredImage, {}, async (err: any) => {
@@ -21,7 +30,7 @@ router.get('/', async (req: Request, res: Response) => {
             });
         } catch (error) {
             console.error(error);
-            return res.send(500).send(error.message);
+            return res.status(500).send({ message: error });
         }
     }).on('error', (e) => {
         console.error(`Image Url is invalid.`);
