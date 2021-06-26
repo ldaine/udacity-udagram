@@ -1,0 +1,1 @@
+export { FilteredImageRouter } from './routes/filteredimage.router';
