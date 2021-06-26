@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { IndexRouter } from './controllers/v0/index.router';
+import { IndexRouter } from './controllers/index.router';
 
 (async () => {
 
@@ -29,14 +29,14 @@ import { IndexRouter } from './controllers/v0/index.router';
 
   /**************************************************************************** */
 
-  app.use('/api/v0/', IndexRouter)
+  app.use('/', IndexRouter)
 
   //! END @TODO1
   
   // Root Endpoint
   // Displays a simple message to the user
   app.get( "/", async ( req, res ) => {
-    res.send("try GET /api/v0/filteredimage?image_url={{}}")
+    res.send("try GET /filteredimage?image_url={{}}")
   } );
   
 

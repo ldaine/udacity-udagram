@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { request } from 'http';
-import { filterImageFromURL, clearFilterImageFolder } from '../../../../util/util';
+import { filterImageFromURL, clearFilterImageFolder } from '../../../util/util';
 
 const router: Router = Router();
 
