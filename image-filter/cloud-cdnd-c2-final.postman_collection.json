@@ -1,30 +1,108 @@
 {
 	"info": {
-		"_postman_id": "d02fe807-05ac-4de3-90eb-05c08556d12e",
+		"_postman_id": "1c8c0654-8762-4158-8662-d75363157c20",
 		"name": "cloud-cdnd-c2-final",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://localhost:8082/api/v0/filteredimage?image_url=https://images.unsplash.com/photo-1485126813038-6bcabfed7bc6",
+			"name": "http://localhost:8082/filteredimage?image_url=https://images.unsplash.com/photo-1485126813038-6bcabfed7bc6",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{HOST}}/api/v0/filteredimage?image_url=https://images.unsplash.com/photo-1485126813038-6bcabfed7bc6",
+					"raw": "http://localhost:8082/filteredimage?image_url=https://images.unsplash.com/photo-1485126813038-6bcabfed7bc6",
 					"protocol": "http",
 					"host": [
-						"{{HOST}}"
+						"localhost"
 					],
+					"port": "8082",
 					"path": [
-						"api",
-						"v0",
 						"filteredimage"
 					],
 					"query": [
 						{
 							"key": "image_url",
 							"value": "https://images.unsplash.com/photo-1485126813038-6bcabfed7bc6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/filteredimage?image_url=https://images.unsplash.com/photo-1485126813038-6bcabfed7bc6 Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/filteredimage?image_url=/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://image-filter-dev.eu-west-1.elasticbeanstalk.com/filteredimage?image_url=https://images.unsplash.com/photo-1485126813038-6bcabfed7bc6 Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://image-filter-dev.eu-west-1.elasticbeanstalk.com/filteredimage?image_url=https://images.unsplash.com/photo-1485126813038-6bcabfed7bc6",
+					"protocol": "http",
+					"host": [
+						"image-filter-dev",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://images.unsplash.com/photo-1485126813038-6bcabfed7bc6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://image-filter-dev.eu-west-1.elasticbeanstalk.com/filteredimage?image_url=https://images.unsplash.com/photo-1485126813038-6bcabfed7bc6",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://image-filter-dev.eu-west-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
+					"protocol": "http",
+					"host": [
+						"image-filter-dev",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
 						}
 					]
 				}
