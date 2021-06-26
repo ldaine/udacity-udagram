@@ -24,6 +24,21 @@ export async function filterImageFromURL(inputURL: string): Promise<string>{
     });
 }
 
+/**
+ * Removes all files from Filter Image tmp folder
+ * @returns 
+ */
+export function clearFilterImageFolder(): void {
+    const dirPath = __dirname + tmpImageFolderRelativePath;
+    fs.readdir(dirPath, (err, files) => {
+        if (err) {
+            console.error(`Could not read directory: ${dirPath}`);
+            return;
+        } 
+        deleteLocalFiles(files.map(fileName => `${dirPath}/${fileName}`))
+    });
+}
+
 // deleteLocalFiles
 // helper function to delete files on the local disk
 // useful to cleanup after tasks
