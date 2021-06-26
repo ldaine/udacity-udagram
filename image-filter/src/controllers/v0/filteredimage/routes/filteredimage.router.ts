@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import {filterImageFromURL} from '../../../../util/util';
+import { filterImageFromURL, clearFilterImageFolder } from '../../../../util/util';
 
 const router: Router = Router();
 
@@ -12,6 +12,7 @@ router.get('/', async (req: Request, res: Response) => {
         const filteredImage = await filterImageFromURL(imageUrl);
         res.sendFile(filteredImage, {}, async (err: any) => {
             console.log('File is send');
+            clearFilterImageFolder();
         });
     } catch (error) {
         console.error(error);
