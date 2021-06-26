@@ -1,6 +1,6 @@
 # Udagram Image Filtering Microservice
 
-## DATA
+## Elastic Beanstalk Deployment
 
 Link to the endpoint URL for a running elastic beanstalk deployment: 
 http://image-filter-dev.eu-west-1.elasticbeanstalk.com/
