@@ -17,9 +17,9 @@ router.get('/', async (req: Request, res: Response) => {
     }, async (response) => {
         console.log(`statusCode: ${response.statusCode}`)
 
-        if (response.statusCode != 200) {
+        if (response.statusCode === 404) {
             console.error(`Image Url is invalid.`);
-            return res.status(400).send({ message: 'Image URL doesnt return any resource.' });
+            return res.status(400).send({ message: 'Given image URL returns 404 Not Found Error.' });
         }
 
         try {
